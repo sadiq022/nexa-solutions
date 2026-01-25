@@ -1,0 +1,323 @@
+/* ==============================
+   ADMIN BASE
+================================ */
+
+:root {
+    --primary: #1F3C88;
+    --accent: #4D7CFE;
+    --dark: #0B1C3D;
+    --dark-soft: #3E4C6A;
+    --bg-light: #F5F7FF;
+    --border: #E0E7FF;
+    --white: #FFFFFF;
+}
+
+body {
+    background: var(--bg-light);
+}
+
+/* ==============================
+   ADMIN CONTAINER
+================================ */
+
+.admin-container {
+    max-width: 900px;
+    margin: 140px auto 80px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(31, 60, 136, 0.12);
+}
+
+/* ==============================
+   ADMIN PREVIEW
+================================ */
+.image-preview {
+    margin-bottom: 15px;
+}
+
+.image-preview img {
+    max-width: 260px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(31,60,136,.15);
+    display: block;
+}
+
+.image-hint {
+    font-size: 13px;
+    color: #3E4C6A;
+    margin-top: 6px;
+}
+
+/* ==============================
+   HEADINGS
+================================ */
+
+.admin-container h1 {
+    font-size: 28px;
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+
+/* ==============================
+   FORM STRUCTURE
+================================ */
+
+.admin-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* ==============================
+   LABELS
+================================ */
+
+.admin-container label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+/* ==============================
+   INPUTS & TEXTAREA
+================================ */
+
+.input,
+.textarea,
+select,
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.input:focus,
+.textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(77, 124, 254, 0.12);
+}
+
+/* ==============================
+   RICH EDITOR
+================================ */
+
+.rich-editor {
+    min-height: 260px;
+}
+
+/* ==============================
+   CHECKBOX
+================================ */
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--dark);
+}
+
+/* ==============================
+   BUTTONS (UNIVERSAL)
+================================ */
+
+.btn-primary {
+    margin-top: 20px;
+    align-self: flex-start;
+    background: var(--accent);
+    color: var(--white);
+    padding: 14px 36px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(77, 124, 254, 0.35);
+}
+
+/* ==============================
+   FILE INPUT FIX
+================================ */
+
+input[type="file"] {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+    .admin-container {
+        margin: 120px 20px 60px;
+        padding: 30px 24px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+/* ==============================
+   ACTION LINKS
+================================ */
+
+.actions a {
+    margin-right: 12px;
+    font-weight: 600;
+    color: #4D7CFE;
+    text-decoration: none;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+.link-danger {
+    background: none;
+    border: none;
+    color: #E53935;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.link-danger:hover {
+    text-decoration: underline;
+}
+
+/* ===============================
+   BLOG LIST (ADMIN)
+================================ */
+
+/* Header */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #0B1C3D;
+}
+
+/* Table wrapper feel */
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(31, 60, 136, 0.08);
+}
+
+/* Header row */
+.admin-table thead {
+    background: #F8FAFF;
+}
+
+.admin-table th {
+    padding: 16px 18px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #3E4C6A;
+    font-weight: 600;
+}
+
+/* Body rows */
+.admin-table td {
+    padding: 16px 18px;
+    font-size: 14px;
+    color: #0B1C3D;
+    border-top: 1px solid #EEF2FF;
+}
+
+/* Row hover */
+.admin-table tbody tr:hover {
+    background: #F8FAFF;
+}
+
+/* Status badge */
+.badge {
+    display: inline-block;
+    min-width: 90px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.badge.published {
+    background: rgba(77, 124, 254, 0.15);
+    color: #1F3C88;
+}
+
+.badge.draft {
+    background: #EAF0FF;
+    color: #3E4C6A;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.actions a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4D7CFE;
+    text-decoration: none;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+/* Delete button */
+.link-danger {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #E53935;
+    cursor: pointer;
+}
+
+.link-danger:hover {
+    text-decoration: underline;
+}
+
+

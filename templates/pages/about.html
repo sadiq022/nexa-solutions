@@ -1,0 +1,139 @@
+{% extends "layouts/base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ================= ABOUT HERO ================= -->
+<!-- HEADER -->
+<section class="contact-header">
+    <h1 class="contact-title">About Nexa Solutions</h1>
+    <p class="contact-subtitle">
+        Building reliable, scalable, and impactful technology solutions
+    </p>
+</section>
+
+<!-- ================= WHO WE ARE ================= -->
+<div class="about-section">
+    <div class="about-grid">
+        <div class="about-card">
+            <h3>Who We Are</h3>
+            <p>
+                Nexa Solutions is a modern IT services company focused on building
+                scalable, secure, and performance-driven digital solutions.
+            </p>
+            <p>
+                From startups to growing enterprises, we help businesses transform
+                ideas into reliable technology products.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Our Mission</h3>
+            <p>
+                To empower businesses with intelligent, future-ready digital solutions
+                that improve efficiency and drive long-term growth.
+            </p>
+
+            <h3 style="margin-top:25px;">Our Vision</h3>
+            <p>
+                To become a trusted global technology partner known for quality,
+                innovation, and transparency.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ================= VALUE SECTION ================= -->
+<div class="about-section soft-bg">
+    <div class="section-header">
+        <div class="section-tag">Our Value</div>
+        <h2 class="section-title">How We Add Value to IT Products</h2>
+        <p class="section-subtitle">
+            We focus on outcomes, not just code
+        </p>
+    </div>
+
+    <div class="value-grid">
+        <div class="value-card">⚙️ Smart Architecture</div>
+        <div class="value-card">🔒 Security First</div>
+        <div class="value-card">🚀 High Performance</div>
+        <div class="value-card">📈 Scalable Systems</div>
+        <div class="value-card">🎯 Business Focus</div>
+        <div class="value-card">🤝 Long-term Support</div>
+    </div>
+</div>
+
+<!-- ================= TIMELINE ================= -->
+<div class="about-section">
+    <div class="section-header">
+        <div class="section-tag">Our Journey</div>
+        <h2 class="section-title">Milestones That Shaped Us</h2>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <span class="timeline-year">2022</span>
+            <p>Started with freelance web & backend development projects</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-year">2023</span>
+            <p>Expanded into AI automation and cloud-based solutions</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-year">2024</span>
+            <p>Launched Nexa Solutions as a full-service IT agency</p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-year">2025</span>
+            <p>Helping global clients build scalable digital products</p>
+        </div>
+    </div>
+</div>
+
+<!-- ================= TEAM ================= -->
+<div class="about-section soft-bg">
+    <div class="section-header">
+        <div class="section-tag">Our Team</div>
+        <h2 class="section-title">People Behind Nexa Solutions</h2>
+    </div>
+
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="{{ url_for('static', filename='images/team/sadiq.jpg') }}" alt="Sadiq Ali">
+            <h4>Sadiq Ali</h4>
+            <p>Co-Founder & Lead Engineer</p>
+        </div>
+
+        <div class="team-card">
+            <img src="{{ url_for('static', filename='images/team/sadiq.jpg') }}" alt="Engineering Team">
+            <h4>Abdul Bari</h4>
+            <p>Co-Founder & Lead Sales Executive</p>
+        </div>
+
+        <div class="team-card">
+            <img src="{{ url_for('static', filename='images/team/sadiq.jpg') }}" alt="Design Team">
+            <h4>Design Team</h4>
+            <p>UI • UX • Product</p>
+        </div>
+    </div>
+</div>
+
+<!-- ================= CTA ================= -->
+<section class="contact-cta">
+    <h2>Let’s Build Something Amazing</h2>
+    <p>
+        Ready to transform your idea into a powerful digital product?
+    </p>
+    <a href="/contact" class="cta-button">
+        Contact Us Today
+    </a>
+</section>
+
+{% endblock %}

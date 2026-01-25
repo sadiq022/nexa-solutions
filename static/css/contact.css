@@ -1,0 +1,214 @@
+/* ================= CONTACT PAGE ================= */
+
+/* ---------- HEADER ---------- */
+.contact-header {
+    padding: 140px 100px 70px;
+    background: linear-gradient(135deg, #0B1C3D, #1F3C88);
+    color: #fff;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 56px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.contact-subtitle {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* ---------- MAIN SECTION ---------- */
+.contact-section {
+    padding: 80px 100px;
+    background: #EAF0FF;
+}
+
+.contact-grid {
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+/* ---------- INFO CARD ---------- */
+.contact-info-card {
+    background: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(31,60,136,.12);
+}
+
+.contact-info-card h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #0B1C3D;
+}
+
+.contact-info-card p {
+    font-size: 16px;
+    color: #3E4C6A;
+    margin-bottom: 35px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 22px;
+    align-items: flex-start;
+}
+
+.contact-item .icon {
+    font-size: 22px;
+}
+
+.contact-item strong {
+    color: #0B1C3D;
+}
+
+.contact-item p {
+    margin: 4px 0 0;
+    color: #3E4C6A;
+}
+
+/* ---------- FORM CARD ---------- */
+.contact-form-card {
+    background: #F8FAFF;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(31,60,136,.12);
+}
+
+.contact-form-card h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #0B1C3D;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #0B1C3D;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #E0E7FF;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4D7CFE;
+}
+
+/* ---------- FORM BUTTON (MATCH HOME CTA) ---------- */
+.contact-form-card .btn-primary {
+    display: inline-block;
+    padding: 14px 34px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #4D7CFE;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.contact-form-card .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(77,124,254,.35);
+}
+
+/* ---------- CTA (MATCH BLOG STYLE) ---------- */
+.contact-cta {
+    max-width: 1400px;
+    margin: 80px auto 120px;
+    padding: 60px 70px;
+    background: linear-gradient(135deg, #0B1C3D, #1F3C88);
+    border-radius: 26px;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-cta h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-cta p {
+    font-size: 17px;
+    opacity: 0.9;
+    margin-bottom: 28px;
+}
+
+.contact-cta .cta-button {
+    background: #fff;
+    color: #4D7CFE;
+    padding: 14px 38px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.contact-cta .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.25);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-header,
+    .contact-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .contact-title {
+        font-size: 36px;
+    }
+
+    .contact-cta {
+        margin: 50px 20px 80px;
+        padding: 40px 24px;
+        border-radius: 22px;
+    }
+
+    .contact-cta h2 {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+
+    .contact-cta p {
+        font-size: 15px;
+        margin-bottom: 22px;
+    }
+
+    .contact-cta .cta-button {
+        width: 100%;
+        max-width: 260px;
+        padding: 14px 0;
+    }
+}

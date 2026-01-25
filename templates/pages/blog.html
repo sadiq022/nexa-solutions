@@ -1,0 +1,168 @@
+{% extends "layouts/base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="blog-header">
+    <h1 class="blog-header-title">Our Blog</h1>
+    <p class="blog-header-subtitle">Insights, trends, and expert advice on technology</p>
+</div>
+
+<div class="blog-content">
+    <div class="main-content">
+
+        {% if featured_post %}
+        <div class="featured-post">
+            <div class="featured-image">
+                <img src="{{ featured_post.featured_image }}" alt="{{ featured_post.title }}">
+                     alt="{{ featured_post.title }}">
+            </div>
+            <div class="featured-content">
+                <div class="post-meta">
+                    <span class="post-category">{{ featured_post.category.name }}</span>
+                    <span class="post-date">📅 {{ featured_post.published_at.strftime('%B %d, %Y') }}</span>
+                    <span class="post-read-time">⏱️ {{ (featured_post.content|length / 1200)|round|int }} min read</span>
+                </div>
+                <h2 class="post-title">{{ featured_post.title }}</h2>
+                <p class="post-excerpt">{{ featured_post.summary }}</p>
+                <div class="post-author">
+                    <div class="author-avatar">
+                        {{ featured_post.author_name[:2].upper() }}
+                    </div>
+                    <div class="author-info">
+                        <div class="author-name">{{ featured_post.author_name }}</div>
+                        <div class="author-role">Writer</div>
+                    </div>
+                    <a href="/blog/{{ featured_post.slug }}" class="read-more-btn">Read Article</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="blog-posts-grid">
+            {% for post in posts.items %}
+            <div class="blog-post-card">
+                <div class="post-thumbnail">
+                    <img src="{{ post.featured_image }}" alt="{{ post.title }}" 
+                         alt="{{ post.title }}">
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-category">{{ post.category.name }}</span>
+                        <span class="post-date">📅 {{ post.published_at.strftime('%b %d') }}</span>
+                    </div>
+                    <h3 class="post-title">{{ post.title }}</h3>
+                    <p class="post-excerpt">{{ post.summary }}</p>
+                    <div class="post-footer">
+                        <div class="post-author">
+                            <div class="author-avatar" style="width:40px;height:40px;font-size:16px">
+                                {{ post.author_name[:2].upper() }}
+                            </div>
+                        </div>
+                        <a href="/blog/{{ post.slug }}" class="post-link">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="pagination">
+            {% if posts.has_prev %}
+            <a href="?page={{ posts.prev_num }}" class="page-btn">←</a>
+            {% endif %}
+            
+            {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                {% if page_num %}
+                    {% if page_num == posts.page %}
+                    <div class="page-btn active">{{ page_num }}</div>
+                    {% else %}
+                    <a href="?page={{ page_num }}" class="page-btn">{{ page_num }}</a>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            
+            {% if posts.has_next %}
+            <a href="?page={{ posts.next_num }}" class="page-btn">→</a>
+            {% endif %}
+        </div>
+
+        <!-- <div class="cta-section">
+            <h2 class="cta-title">Ready to Transform Your Business?</h2>
+            <p class="cta-subtitle">
+                Get in touch with our expert team and build something powerful.
+            </p>
+            <a href="/contact" class="cta-button">
+                Contact Us Today
+            </a>
+        </div> -->
+    </div>
+
+    <aside class="sidebar">
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Search Topics</h3>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search articles...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Categories</h3>
+            <div class="categories-list">
+                {% for category, post_count in categories %}
+                <div class="category-item">
+                    <span class="category-name">{{ category.name }}</span>
+                    <span class="category-count">{{ post_count }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="sidebar-widget">
+            <h3 class="widget-title">Recent Posts</h3>
+            <div class="recent-posts-list">
+                {% for rp in recent_posts %}
+                <div class="recent-post-item">
+                    <div class="recent-post-thumb">
+                        <img src="{{ rp.featured_image }}" alt="{{ rp.title }}">
+                             alt="{{ rp.title }}">
+                    </div>
+                    <div class="recent-post-info">
+                        <div class="recent-post-title">{{ rp.title }}</div>
+                        <div class="recent-post-date">{{ rp.published_at.strftime('%b %d, %Y') }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="sidebar-widget newsletter-widget">
+            <h3 class="widget-title">Newsletter</h3>
+            <p class="newsletter-desc">Subscribe to get the latest tech insights delivered to your inbox.</p>
+            <input type="email" class="newsletter-input" placeholder="Your email">
+            <button class="newsletter-btn">Subscribe</button>
+        </div>
+
+        <div class="sidebar-widget contact-widget">
+            <h3 class="widget-title">Need Help?</h3>
+            <p>Our experts are ready to assist you</p>
+            <a href="/contact" class="contact-btn">Contact Us</a>
+        </div>
+    </aside>
+        
+    <div class="blog-cta-wrapper">
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Transform Your Business?</h2>
+            <p class="cta-subtitle">
+                Get in touch with our expert team and build something powerful.
+            </p>
+            <a href="/contact" class="cta-button">Contact Us</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

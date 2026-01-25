@@ -1,0 +1,117 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+{{ post.seo_title or post.title }}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/blog_detail.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- BLOG HEADER -->
+<div class="blog-detail-header">
+    <div class="blog-detail-header-inner">
+        <h1 class="blog-title">{{ post.title }}</h1>
+        <p class="blog-subtitle">{{ post.summary }}</p>
+
+        <div class="blog-meta">
+            <span class="category">{{ post.category.name }}</span>
+            <span>{{ post.published_at.strftime('%B %d, %Y') }}</span>
+            <span>{{ post.view_count }} views</span>
+        </div>
+    </div>
+</div>
+
+<!-- BLOG BODY -->
+<div class="blog-detail-container">
+
+    <!-- MAIN CONTENT -->
+    <main class="blog-detail-content">
+
+        {% if post.featured_image %}
+        <img
+            src="{{ post.featured_image }}"
+            alt="{{ post.title }}"
+            class="blog-featured-image"
+        >
+        {% endif %}
+
+        <div class="post-body">
+            {{ post.content | safe }}
+        </div>
+
+        <!-- CTA -->
+        <section class="blog-cta">
+            <h2>Need a Website or App for Your Business?</h2>
+            <p>
+                We design and develop high-quality websites and applications
+                that help businesses grow online.
+            </p>
+            <a href="/contact" class="cta-button">
+                Contact Us
+            </a>
+        </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="blog-sidebar">
+
+        {% if related_posts %}
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Related Articles</h3>
+
+            {% for related in related_posts %}
+            <a href="/blog/{{ related.slug }}" class="related-post">
+                <img src="{{ related.featured_image }}" alt="{{ related.title }}">
+                <div>
+                    <div class="related-title">
+                        {{ related.title[:60] }}{% if related.title|length > 60 %}…{% endif %}
+                    </div>
+                    <div class="related-date">
+                        {{ related.published_at.strftime('%b %d, %Y') }}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Categories</h3>
+            <div class="category-list">
+                {% for category in categories %}
+                <a href="/blog?category={{ category.name }}" class="category-item">
+                    <span>{{ category.name }}</span>
+                    <span class="count">{{ category.post_count }}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <h3 class="sidebar-title">Latest Articles</h3>
+        {% if popular_posts %}
+            {% for popular in popular_posts %}
+                <a href="/blog/{{ popular.slug }}" class="popular-post">
+                    <div class="popular-thumb">
+                        <img src="{{ popular.featured_image }}" alt="{{ popular.title }}">
+                    </div>
+
+                    <div class="popular-post-content">
+                        <div class="popular-post-title">
+                            {{ popular.title[:50] }}{% if popular.title|length > 50 %}...{% endif %}
+                        </div>
+                        <div class="popular-post-meta">
+                            {{ popular.view_count }} views
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% endif %}
+
+    </aside>
+</div>
+
+{% endblock %}

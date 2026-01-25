@@ -1,0 +1,49 @@
+<nav class="navbar">
+    <a href="/" class="nav-logo">
+        <div class="nav-logo-img">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Nexa Solutions">
+        </div>
+        <span class="nav-logo-text">NEXA SOLUTIONS</span>
+    </a>
+
+    <!-- DESKTOP LINKS -->
+    <div class="nav-links">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/services">Services</a>
+        <a class="nav-link" href="/blog">Blog</a>
+        <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" href="/contact">Contact</a>
+
+        {% if current_user.is_authenticated %}
+            <a class="nav-link admin-link" href="/admin">Dashboard</a>
+            <a class="nav-link admin-link" href="/admin/blogs">Manage Blogs</a>
+        {% endif %}
+    </div>
+
+    <!-- CTA / LOGOUT -->
+    {% if current_user.is_authenticated %}
+        <a href="/admin/logout" class="nav-cta logout-btn">Logout</a>
+    {% else %}
+        <a href="/contact" class="nav-cta">Contact Us</a>
+    {% endif %}
+
+    <!-- MOBILE TOGGLE -->
+    <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/blog">Blog</a>
+    <a href="/about">About</a>
+
+    {% if current_user.is_authenticated %}
+        <a href="/admin">Dashboard</a>
+        <a href="/admin/blogs">Manage Blogs</a>
+        <a href="/admin/logout" class="mobile-logout">Logout</a>
+    {% else %}
+        <a href="/contact">Contact</a>
+        <a href="/contact" class="mobile-cta">Contact Us</a>
+    {% endif %}
+</div>

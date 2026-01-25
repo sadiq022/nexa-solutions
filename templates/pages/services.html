@@ -1,0 +1,303 @@
+{% extends "layouts/base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HEADER -->
+<section class="services-header">
+    <h1 class="services-title">Transform Your Digital Landscape</h1>
+    <p class="services-subtitle">
+        Comprehensive IT solutions tailored to drive innovation and growth
+    </p>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services-section">
+    <div class="services-intro">
+        <h2>Our IT Services Portfolio</h2>
+        <p>We deliver cutting-edge technology solutions that empower businesses to thrive in the digital age.</p>
+    </div>
+
+    <!-- SERVICES GRID -->
+    <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="Software Development">
+                <div class="service-image-overlay"></div>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Custom Software Development</h3>
+                <p class="service-description">
+                    Build scalable, secure, and high-performance applications tailored to your specific business needs. From web apps to mobile solutions.
+                </p>
+                <div class="service-details">
+                    <div class="service-features">
+                        <span class="feature-tag">Web & Mobile Apps</span>
+                        <span class="feature-tag">Enterprise Software</span>
+                        <span class="feature-tag">API Integration</span>
+                        <span class="feature-tag">Maintenance & Support</span>
+                    </div>
+                    <div class="service-tech">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="Cloud Solutions">
+                <div class="service-image-overlay"></div>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Cloud Solutions & Migration</h3>
+                <p class="service-description">
+                    Seamlessly migrate and optimize your infrastructure on leading cloud platforms with enhanced security and scalability.
+                </p>
+                <div class="service-details">
+                    <div class="service-features">
+                        <span class="feature-tag">Infrastructure Setup</span>
+                        <span class="feature-tag">Data Migration</span>
+                        <span class="feature-tag">Cost Optimization</span>
+                        <span class="feature-tag">24/7 Monitoring</span>
+                    </div>
+                    <div class="service-tech">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Google Cloud</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="Cybersecurity">
+                <div class="service-image-overlay"></div>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Cybersecurity Services</h3>
+                <p class="service-description">
+                    Protect your digital assets with comprehensive security solutions, vulnerability assessments, and compliance management.
+                </p>
+                <div class="service-details">
+                    <div class="service-features">
+                        <span class="feature-tag">Security Audits</span>
+                        <span class="feature-tag">Penetration Testing</span>
+                        <span class="feature-tag">Incident Response</span>
+                        <span class="feature-tag">Compliance</span>
+                    </div>
+                    <div class="service-tech">
+                        <span class="tech-tag">SIEM</span>
+                        <span class="tech-tag">Firewall</span>
+                        <span class="tech-tag">Encryption</span>
+                        <span class="tech-tag">VPN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="Mobile Development">
+                <div class="service-image-overlay"></div>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Mobile App Development</h3>
+                <p class="service-description">
+                    Create engaging native and cross-platform mobile applications that deliver exceptional user experiences across all devices.
+                </p>
+                <div class="service-details">
+                    <div class="service-features">
+                        <span class="feature-tag">iOS & Android</span>
+                        <span class="feature-tag">React Native</span>
+                        <span class="feature-tag">UI/UX Design</span>
+                        <span class="feature-tag">App Store Optimization</span>
+                    </div>
+                    <div class="service-tech">
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Flutter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="Data Analytics">
+                <div class="service-image-overlay"></div>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Data Analytics & AI</h3>
+                <p class="service-description">
+                    Harness the power of data with advanced analytics, business intelligence, and AI-driven insights for informed decision-making.
+                </p>
+                <div class="service-details">
+                    <div class="service-features">
+                        <span class="feature-tag">Business Intelligence</span>
+                        <span class="feature-tag">Machine Learning</span>
+                        <span class="feature-tag">Predictive Analytics</span>
+                        <span class="feature-tag">Data Visualization</span>
+                    </div>
+                    <div class="service-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="DevOps">
+                <div class="service-image-overlay"></div>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">DevOps & Automation</h3>
+                <p class="service-description">
+                    Streamline development and operations with CI/CD pipelines, infrastructure automation, and continuous monitoring solutions.
+                </p>
+                <div class="service-details">
+                    <div class="service-features">
+                        <span class="feature-tag">CI/CD Pipeline</span>
+                        <span class="feature-tag">Infrastructure as Code</span>
+                        <span class="feature-tag">Container Orchestration</span>
+                        <span class="feature-tag">Performance Monitoring</span>
+                    </div>
+                    <div class="service-tech">
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Jenkins</span>
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">Ansible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section class="process-section">
+    <div class="process-header">
+        <h2>Our Service Delivery Process</h2>
+        <p>A structured approach to ensure excellence at every stage</p>
+    </div>
+    
+    <div class="process-steps">
+        <div class="process-step" data-aos="zoom-in" data-aos-delay="100">
+            <div class="step-number">01</div>
+            <h3>Discovery & Analysis</h3>
+            <p>Understand requirements, challenges, and objectives</p>
+        </div>
+        
+        <div class="process-step" data-aos="zoom-in" data-aos-delay="200">
+            <div class="step-number">02</div>
+            <h3>Planning & Design</h3>
+            <p>Create architecture and project roadmap</p>
+        </div>
+        
+        <div class="process-step" data-aos="zoom-in" data-aos-delay="300">
+            <div class="step-number">03</div>
+            <h3>Development & Testing</h3>
+            <p>Agile development with continuous testing</p>
+        </div>
+        
+        <div class="process-step" data-aos="zoom-in" data-aos-delay="400">
+            <div class="step-number">04</div>
+            <h3>Deployment & Support</h3>
+            <p>Launch and provide ongoing maintenance</p>
+        </div>
+    </div>
+</section>
+
+<!-- PREVIOUS WORK SECTION -->
+<section class="previous-work-section">
+    <div class="previous-work-content">
+        <div class="previous-work-text" data-aos="fade-right">
+            <h2>See Our Work in Action</h2>
+            <p>Explore our portfolio of successful projects and discover how we've helped businesses achieve their digital transformation goals.</p>
+            <p>From enterprise solutions to innovative startups, our work speaks for itself.</p>
+            <a href="/about" class="work-cta-button">
+                View Our Portfolio
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+        <div class="previous-work-image" data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Previous Work">
+            <div class="work-stats">
+                <div class="stat">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="services-cta">
+    <h2>Ready to Elevate Your IT Infrastructure?</h2>
+    <p>Let's discuss how our services can transform your business</p>
+    <a href="/contact" class="cta-button">
+        Get In Touch
+    </a>
+</section>
+
+<!-- Add AOS Library for Animations -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+    
+    // Add hover effects to service cards
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            const image = this.querySelector('.service-image img');
+            image.style.transform = 'scale(1.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            const image = this.querySelector('.service-image img');
+            image.style.transform = 'scale(1)';
+        });
+    });
+</script>
+
+{% endblock %}
