@@ -31,8 +31,8 @@ app.config["MAIL_PASSWORD"] = os.getenv("MAIL_PASSWORD")  # betz_ynfk_hvzl_cews
 app.config["MAIL_DEFAULT_SENDER"] = os.getenv("MAIL_USERNAME")  # Just the email, not tuple
 mail.init_app(app)
 
-print("MAIL_USERNAME =", app.config["MAIL_USERNAME"])
-print("MAIL_PASSWORD EXISTS =", bool(app.config["MAIL_PASSWORD"]))
+# print("MAIL_USERNAME =", app.config["MAIL_USERNAME"])
+# print("MAIL_PASSWORD EXISTS =", bool(app.config["MAIL_PASSWORD"]))
 
 # ============================
 # FLASK-LOGIN SETUP

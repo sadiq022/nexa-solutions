@@ -92,3 +92,88 @@
         min-width: 100%;
     }
 }
+
+
+/* ================= FEATURED ON (MATCH SERVICES SECTION) ================= */
+
+.featured-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* LOGO GRID */
+.featured-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* CLICKABLE CARD */
+.featured-logo {
+    background: #ffffff;
+    padding: 35px 45px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(31, 60, 136, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* LOGO IMAGE */
+.featured-logo img {
+    height: 120px;
+    max-width: 300px;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+/* PLATFORM NAME */
+.platform-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0B1C3D;
+    letter-spacing: 0.3px;
+}
+
+/* HOVER EFFECT */
+.featured-logo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(31, 60, 136, 0.2);
+}
+
+.featured-logo:hover .platform-name {
+    color: var(--accent);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .featured-logos {
+        gap: 50px;
+    }
+
+    .featured-logo img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .featured-logos {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .featured-logo {
+        padding: 30px;
+    }
+
+    .featured-logo img {
+        height: 90px;
+    }
+}
