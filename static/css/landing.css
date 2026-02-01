@@ -93,7 +93,6 @@
     }
 }
 
-
 /* ================= FEATURED ON (MATCH SERVICES SECTION) ================= */
 
 .featured-container {
@@ -176,4 +175,36 @@
     .featured-logo img {
         height: 90px;
     }
+}
+
+/* SERVICE BULLET POINTS */
+.service-points {
+    margin-top: 16px;
+    padding-left: 18px;
+    text-align: left;
+}
+
+.service-points li {
+    font-size: 14px;
+    color: #3E4C6A;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* SERVICE IMAGE BADGE */
+.service-box-image {
+    position: relative;
+}
+
+.service-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(31, 60, 136, 0.9);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
 }
