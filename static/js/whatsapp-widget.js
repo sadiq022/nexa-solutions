@@ -3,7 +3,7 @@
 ===================================================== */
 
 class WhatsAppWidget {
-    constructor(whatsappNumber = "+919927623855") {
+    constructor(whatsappNumber = "+91 8077 313 241") {
         this.whatsappNumber = whatsappNumber;
         this.isOpen = false;
         this.messages = [];
@@ -298,5 +298,5 @@ class WhatsAppWidget {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    window.whatsappWidget = new WhatsAppWidget('+919927623855');
+    window.whatsappWidget = new WhatsAppWidget('+91 8077 313 241');
 });
