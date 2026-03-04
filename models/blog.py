@@ -1,8 +1,10 @@
 from datetime import datetime
+import uuid
 from sqlalchemy import (
     Column, Integer, String, Text, Boolean,
     DateTime, ForeignKey, Index
 )
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from extensions import db
 
@@ -13,7 +15,7 @@ from extensions import db
 class Category(db.Model):
     __tablename__ = "categories"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name = Column(String(100), unique=True, nullable=False)
 
     posts = relationship(
@@ -51,7 +53,7 @@ class BlogPost(db.Model):
 
     # ===== RELATIONS =====
     category_id = Column(
-        Integer,
+        UUID(as_uuid=True),
         ForeignKey("categories.id", ondelete="RESTRICT"),
         nullable=False
     )
