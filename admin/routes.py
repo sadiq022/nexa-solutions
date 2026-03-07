@@ -155,7 +155,7 @@ def manage_categories():
     categories = Category.query.all()
     return render_template("admin/categories.html", categories=categories)
 
-@admin_bp.route("/categories/<int:id>/delete", methods=["POST"])
+@admin_bp.route("/categories/<uuid:id>/delete", methods=["POST"])
 @login_required
 def delete_category(id):
     category = Category.query.get_or_404(id)

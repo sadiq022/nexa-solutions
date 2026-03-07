@@ -13,7 +13,7 @@ from extensions import db
 # CATEGORIES
 # ============================
 class Category(db.Model):
-    __tablename__ = "categories"
+    __tablename__ = "blog_categories"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name = Column(String(100), unique=True, nullable=False)
@@ -54,7 +54,7 @@ class BlogPost(db.Model):
     # ===== RELATIONS =====
     category_id = Column(
         UUID(as_uuid=True),
-        ForeignKey("categories.id", ondelete="RESTRICT"),
+        ForeignKey("blog_categories.id", ondelete="RESTRICT"),
         nullable=False
     )
 
